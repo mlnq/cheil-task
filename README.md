@@ -22,7 +22,7 @@ to run project you should follow this steps:
 
 2. `docker compose up`
 
-after this command app is avaiable at [localhost:5173](http://localhost:5173/)
+after this command app is available at [localhost:5173](http://localhost:5173/)
 
 ### Use seeder to fulfill data
 
