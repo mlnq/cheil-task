@@ -1,0 +1,30 @@
+version: '3'
+# your services for the task
+services:
+  backend:
+    build:
+      context: ./be
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./be/.env
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./fe
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:8
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
